@@ -21,8 +21,7 @@ def scrape(url: str = None):
     try: 
         response = get(url, headers=headers, timeout=15)
         if response.status_code == 200: 
-            soup = BeautifulSoup(response.text, "html.parser")
-            data = soup.find(id="mw-content-text").text
+            data = BeautifulSoup(response.text, "html.parser").find(id="mw-content-text").text
 
             if not data: 
                 raise HTTPException(status_code=404, id="data not found")
