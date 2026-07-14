@@ -27,7 +27,7 @@ def scrape(url: str = None):
             if not data: 
                 raise HTTPException(status_code=404, id="data not found")
             
-            return data
+            return data[:10000]
     
     except RequestException as e:
         raise HTTPException(status_code=500, detail=str(e))

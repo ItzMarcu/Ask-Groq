@@ -14,11 +14,11 @@ def analyze_data(data: str = None) -> str:
     message = [
         {
             "role": "user",
-            "content": f"elabora questo testo e valuta se dare una risposta contente le informazioni" /
-            "riportate senza aggiungere alcuna intestazione rendendole anche facilmente leggibili" /
-            "oppure nel caso sia una domanda in merito a tale argomento fornisci in breve un parametro" / 
-            "di una sola parola per ottenere piú informazioni a riguardo da passare alla query API" / 
-            "in tal caso scrivi la parola in snake case e non usare spazi"
+            "content": "elabora questo testo e valuta se dare una risposta contente le informazioni" +
+            "riportate senza aggiungere alcuna intestazione rendendole anche facilmente leggibili senza simboli strani" +
+            "oppure nel caso sia una domanda in merito a tale argomento fornisci in breve un parametro" +
+            "di una sola parola per ottenere piú informazioni a riguardo da passare alla query API" + 
+            f"in tal caso scrivi la parola in snake case e non usare spazi: {data}"
         }
     ]
 
