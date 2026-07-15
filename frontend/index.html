@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +8,10 @@
     <link rel="shortcut icon" href="assets/groq-logo.png" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body class="bg-[#0a0a0a] text-zinc-100 flex flex-col h-screen w-screen m-0 overflow-hidden selection:bg-red-500/30">
 
-    <!-- Header super minimal e pulito -->
+    <!-- Header -->
     <header class="border-b border-zinc-900 px-6 py-4">
         <div class="max-w-3xl mx-auto flex items-center justify-between">
             <div class="flex items-center gap-3">
@@ -23,33 +25,35 @@
     <!-- Area Conversazione -->
     <main class="flex-1 overflow-y-auto flex justify-center w-full px-4">
         <div id="chatMessages" class="w-full max-w-3xl py-8 flex flex-col gap-8 scroll-smooth">
-            
-            <!-- Messaggio Bot (Stile minimale, senza avatar pesanti) -->
+
+            <!-- Messaggio Bot -->
             <div class="flex flex-col gap-2 max-w-[85%] self-start group">
                 <span class="text-[10px] text-red-500 font-mono tracking-wider uppercase">groq_node</span>
-                <div class="text-sm leading-relaxed text-zinc-300 font-light pl-3 border-l-2 border-red-600/30">
+                <div id="botResponse"
+                    class="text-sm leading-relaxed text-zinc-300 font-light pl-3 border-l-2 border-red-600/30">
                     Ciao. Come posso aiutarti oggi?
+                </div>
+            </div>
+
+            <!-- Messaggio Utente -->
+            <div class="flex flex-col gap-2 max-w-[85%] self-end items-end group">
+                <span class="text-[10px] text-red-500 font-mono tracking-wider uppercase">user_node</span>
+                <div id="userInput"
+                    class="text-sm leading-relaxed text-zinc-300 font-light pr-3 border-r-2 border-red-600/30 text-right">
+                    
                 </div>
             </div>
 
         </div>
     </main>
 
-    <!-- Barra di Input ultra-pulita -->
+    <!-- Barra di Input -->
     <footer class="p-4 md:pb-8 w-full flex justify-center bg-[#0a0a0a]">
         <form id="chatForm" class="w-full max-w-3xl flex items-center gap-3 border-t border-zinc-950 pt-4">
-            <input 
-                type="text" 
-                id="userInput" 
-                placeholder="Scrivi qui..." 
-                autocomplete="off" 
-                required
-                class="flex-1 bg-transparent py-3 text-sm text-white outline-none placeholder-zinc-700"
-            >
-            <button 
-                type="submit"
-                class="text-xs uppercase tracking-widest text-zinc-400 hover:text-red-500 transition-colors duration-150 font-medium px-4 py-3"
-            >
+            <input type="text" id="userInput" placeholder="Scrivi qui..." autocomplete="off" required
+                class="flex-1 bg-transparent py-3 text-sm text-white outline-none placeholder-zinc-700">
+            <button id="submit" type="submit"
+                class="text-xs uppercase tracking-widest text-zinc-400 hover:text-red-500 transition-colors duration-150 font-medium px-4 py-3">
                 Invia
             </button>
         </form>
@@ -58,4 +62,5 @@
 </body>
 <script src="js/handler.js"></script>
 <script src="js/response.js"></script>
+
 </html>
