@@ -1,3 +1,5 @@
+import {fetchData} from "./response";
+
 const userInput = document.getElementById("userInput");
 const botMessages = document.getElementById("botResponse");
 const userMessages = document.getElementById("userInput");
@@ -8,7 +10,11 @@ submitBtn.addEventListener("click", () => {
         text = userInput.value.trim();
         if (!text) return;
 
-        // chiamare API 
+        addUserMessage(text);
+
+        response = fetchData(text);
+        
+        addResponseMessage(text);
     }
 
     console.error("Error: HTML document changed");
