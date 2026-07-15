@@ -6,7 +6,11 @@ from web_scrape import scrape
 
 app = FastAPI()
 origins = ["https://itzmarcu.github.io"]
+<<<<<<< HEAD
 app.add_middleware(
+=======
+app.middleware(
+>>>>>>> 669adcb (First Layout, no test yet)
     CORSMiddleware,
     allow_origins=origins,
     allow_credentials=True,
