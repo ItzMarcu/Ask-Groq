@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ask Groq</title>
+    <link rel="shortcut icon" href="assets/groq-logo.png" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 flex items-center justify-center h-screen w-screen m-0">
+
+    <div class="w-full max-w-[450px] h-[600px] bg-white rounded-2xl shadow-xl flex flex-col overflow-hidden border border-slate-200">
+        
+        <div class="bg-indigo-600 text-white p-4 flex items-center gap-3">
+            <div class="w-10 h-10 bg-indigo-500 rounded-full flex items-center justify-center text-xl shadow-inner">
+                🤖
+            </div>
+            <div>
+                <h2 class="font-semibold text-base leading-tight">Groq</h2>
+                <p class="text-xs text-indigo-200 flex items-center gap-1.5">
+                    <span class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
+                    Online e pronto ad aiutarti
+                </p>
+            </div>
+        </div>
+
+        <div id="chatMessages" class="flex-1 p-4 overflow-y-auto bg-slate-50 flex flex-col gap-3 scroll-smooth">
+            <div class="max-w-[75%] p-3 rounded-2xl rounded-tl-sm text-sm leading-relaxed bg-slate-200 text-slate-800 self-start">
+                Ciao! Sono il tuo assistente virtuale. Come posso aiutarti oggi?
+            </div>
+        </div>
+
+        <form id="chatForm" class="p-3 bg-white border-t border-slate-200 flex gap-2">
+            <input 
+                type="text" 
+                id="userInput" 
+                placeholder="Scrivi un messaggio..." 
+                autocomplete="off" 
+                required
+                class="flex-1 px-4 py-2.5 border border-slate-300 rounded-full text-sm outline-none focus:border-indigo-600 transition-colors"
+            >
+            <button 
+                type="submit"
+                class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium text-sm px-5 py-2.5 rounded-full transition-colors active:scale-95 duration-100"
+            >
+                Invia
+            </button>
+        </form>
+    </div>
+</body>
+<script src="js/handler.js"></script>
+<script src="js/response.js"></script>
+</html>
